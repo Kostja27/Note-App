@@ -17,7 +17,7 @@ render(store, true)
 eventDelegation()
 
 
-//add button
+//Button which add new row
 let addButton = document.querySelector(".addTabele")
 function showInput(){
     addInput();
@@ -58,12 +58,10 @@ archiveButton.addEventListener("click", showArchive)
 
 
 
-
-
-
-
+///eventDelegation for others button 
 function eventDelegation() {
 
+    //Button which remove row
     let removeButton = document.querySelectorAll(".remove")
     function deleteItems() {
         let a = event.currentTarget.closest(".row").id.substring(6);
@@ -83,7 +81,7 @@ function eventDelegation() {
         it.addEventListener("click", deleteItems)
     })
 
-
+     //Button which change row
     let changeButton = document.querySelectorAll(".change")
     function changeItems() {
          let a = event.currentTarget.closest(".row").id.substring(6);
@@ -94,7 +92,7 @@ function eventDelegation() {
         it.addEventListener("click", changeItems)
     })
 
-
+    //Button which add change in current row
    let addChange = document.querySelectorAll(".add")
     function changeDate() {
          let a = event.currentTarget.closest(".row").id.substring(6);
@@ -109,7 +107,7 @@ function eventDelegation() {
         it.addEventListener("click",changeDate)
     })
 
-
+    //Button which add row in archive 
     let archiveButton = document.querySelectorAll(".onArchive")
     function onArchive() {
         let a = event.currentTarget.closest(".row").id.substring(6);

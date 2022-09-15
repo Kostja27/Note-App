@@ -1,3 +1,5 @@
+
+// function which render row 
 function render(store, condition) {
     if (condition) {
         store.map(function (items, id) {
@@ -32,7 +34,7 @@ export { render }
 
 
 
-
+// function which render Archive 
 function renderArchive(store, condition) {
     if (condition) {
         store.map(function (items, id) {
@@ -66,6 +68,8 @@ function renderArchive(store, condition) {
 export { renderArchive }
 
 
+
+// function which render row which show Statistics
 function renderStatistics(store) {
     let numberCategori = [
      {name:"Task",Active:0,Archived:0},
@@ -80,9 +84,7 @@ function renderStatistics(store) {
         item.Archived+=store.reduce(function(data,items){
             if(item.name==items.Categori&&items.Statuse!=true){return data+1}else{return data}
          },  0)
-
     })
-
     numberCategori.forEach(function(items){
         const elem = document.querySelector(".TabeleStatistics")
         const newElement = document.createElement("div");
@@ -94,7 +96,7 @@ function renderStatistics(store) {
     })
 }
 
-
+// function which render Input for add row
 function addInput(){
                 const elem = document.querySelector(".addTabele")
                 const newElement = document.createElement("div");
@@ -111,7 +113,7 @@ function addInput(){
 export { addInput }
 
 
-
+//function which take date for row whith Statistics 
 function takeDataInput(){
     let a={ Name:null, Craeted: null, Categori: null, Content: null, Dates:"", Statuse: null }
     let data1 = document.querySelector(".input1")
@@ -130,7 +132,7 @@ function takeDataInput(){
 export { takeDataInput}
 
 
-
+// function which render Input to change current row
 function changeInput(a,store,booleon){
     if(booleon){
         let elem = document.querySelector(`#items_${a}`)
@@ -140,18 +142,16 @@ function changeInput(a,store,booleon){
         <option>Target</option>
         <option selected="selected" value="${store[a].Categori}">${store[a].Categori}</option>
         <option>Idea</option>
-      </select><textarea class="input4">${store[a].Content}</textarea><textarea class="input5"></textarea><button class='add'>change</button><div></div>`  
-    
+      </select><textarea class="input4">${store[a].Content}</textarea><textarea class="input5"></textarea><button class='add'>change</button><div></div>`      
     }else if(booleon==false){
         let date=takeDataInput()
-        // let elem = document.querySelector(`#items_${a}`)
-        // elem.remove()
         return date
     }
     }
 export { changeInput}
 
 
+// function which delete Input which  change  row
 function removeInput (){
     const newElement = document.getElementById("input")
     newElement.remove()
@@ -160,6 +160,7 @@ export { removeInput }
 
 
 
+// function which  delete row 
 function remove(store, condition) {
     if (condition) {
         store.map(function (items, id) {
