@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="test1.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-    
+    <div class="Wrapper">
+        <div class="TabeleDate">
+            <div class="TabeleDateInfo">
+                <div class="row">
+                    <span class="rowDate">Name</span> <span class="rowDate">Craeted</span><span class="rowDate">Categori</span><span class="rowDate">
+                        Content</span><span class="rowDate">Dates</span><span class="rowDate"><button class="archive">Archive</button></span>
+                </div>       
+            </div>
+            <div style="display: flex;">
+                <button class="addTabele ">Add Note</button>
+            </div>
+            <div class="TabeleStatistics">
+                <div class="row">
+                    <span class="rowDate">Note Category</span><span class="rowDate">Active</span><span class="rowDate">Archived</span>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="store.js"></script>
 </body>
+
 </html>
